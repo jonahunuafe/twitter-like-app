@@ -1,13 +1,10 @@
-import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+
 import Post from "./Post";
 import classes from './PostsList.module.css'
 
 function PostsList() {
-    const [posts, setPosts] = useState([]);
-
-    function addPostHandler(postData) {
-        setPosts((existingPosts) => [postData, ...existingPosts]);
-    }
+    const posts = useLoaderData();
 
     return (
         <>
